@@ -13,6 +13,7 @@ import { GSDevTools } from "gsap/all";
 import BlockAnimation from "./components/nav/BlockAnimation";
 import HermanJumper from "./components/HermanJumper";
 import PortalPusher from './components/PortalPusher/'
+import MasonryGrid from "./components/MasonryGrid";
 gsap.registerPlugin(SplitText);
 
 const Home = () => {
@@ -50,18 +51,19 @@ const Home = () => {
     <Wrapper className="wrapper">
       {!isLoading && !userData && (
         <NotLoggedInWrapper>
-          <WelcomeMessage id="splitText">
+          <MasonryGrid />
+          {/* <WelcomeMessage id="splitText">
             {
               "Welcome to PIXEL PUSHERS to have access to all features please continue to"
             }
             <a href={"/login"}> login</a>
           <BlockAnimation length={getMedia('500px','500px','405px','310px')}/>
-          </WelcomeMessage>
-          <div style={{width:'98vw',height:'600px', display:'flex', }}>
-
-          <PortalPusher/>
-          </div>
-          <HermanJumper />
+          </WelcomeMessage> */}
+          {/* <div style={{width:'98vw',height:'600px', display:'flex', }}> */}
+          
+          {/* <PortalPusher/> */}
+          {/* <HermanJumper /> */}
+          {/* </div> */}
         </NotLoggedInWrapper>
       )}
       {userData && (
