@@ -12,7 +12,9 @@ const MasonryGrid = () => {
     "https://c4.wallpaperflare.com/wallpaper/995/599/664/art-friendship-trust-baby-children-s-hd-wallpaper-preview.jpg";
   const img3 =
     "https://c4.wallpaperflare.com/wallpaper/995/599/664/art-friendship-trust-baby-children-s-hd-wallpaper-preview.jpg";
-  const photosArray = [img1, img2, img3, img2, img3, img1, img3, img1, img2];
+    const img4= 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRMzUsedfa_lJtf3cKZVtbknEhN8841NJ8yQ&s';
+    const img5='https://wallhalla.com/thumbs/71'
+  const photosArray = [img1, img4, img3, img2, img5, img1, img3, img1, img2, img2,img3,img1];
   const chunkSize = 3;
 
   useEffect(() => {
@@ -29,6 +31,7 @@ const MasonryGrid = () => {
         {chunk.map((imgUrl, index) => {
           return (
             <Photo key={index + imgUrl}>
+              <h2>Hello world</h2>
               <Image src={imgUrl} alt={"random-image"} />
             </Photo>
           );
@@ -51,21 +54,48 @@ const Image = styled.img`
   height: 100%;
   border-radius: 5px;
   object-fit: cover;
-  flex: 2;
+
 `;
-const Photo = styled.div``;
+const Photo = styled.div`
+
+`;
 const Column = styled.div`
+position: relative;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  height: 100%;
+  width:45%;
+  margin:0 auto;
+  gap:25px;
+  &:last-child{
+    margin:0 10px;
+    flex-shrink:1;
+  }
+${media.fullWidth} {
+    width:23%;
+}
+
+${media.tablet} {
+    width:30.125vw;
+}
+
+${media.mobile} {
+    width:35.047vw;
+}
 `;
 const PhotoGallery = styled.div`
+position: relative;
   display: flex;
-  gap: 20px;
+  flex-wrap:wrap;
+
+
+
   ${media.fullWidth} {
+   
   }
 
   ${media.tablet} {
+  
   }
 
   ${media.mobile} {
@@ -73,8 +103,8 @@ const PhotoGallery = styled.div`
   }
 `;
 const Wrapper = styled.div`
-  max-width: 1224px;
-  width: 90%;
-  margin: auto;
+ width:100%;
+  margin: 0 auto;
   padding: 40px 0;
+ 
 `;
